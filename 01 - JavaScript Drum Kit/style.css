@@ -1,51 +1,97 @@
 html {
-  font-size: 10px;
-  background: url('./background.jpg') bottom center;
-  background-size: cover;
+	box-sizing: border-box;
+	height: 100%;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-body,html {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
-.keys {
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
+body {
+	color: white;
+	padding-top: 30px;
+
+	background-image: url("./assets/backgrounds/drums.jpg");
+	background-size: cover;
+	background-position: center center;
 }
 
-.key {
-  border: .4rem solid black;
-  border-radius: .5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  transition: all .07s ease;
-  width: 10rem;
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 .5rem black;
+.all-keys-container {
+	max-width: fit-content;
+	margin: auto;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
 }
 
-.playing {
-  transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
+.key-container {
+	width: 10ch;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+
+	border-width: 4px;
+	border-style: outset;
+	border-color: rgba(255, 255, 255, 0.75);
+	border-radius: 6px;
+
+	box-shadow: 3px 3px 5px rgb(63, 63, 63);
+
+	background-color: rgba(105, 105, 105, 0.4);
+
+	transition: all 0.6s ease;
 }
 
-kbd {
-  display: block;
-  font-size: 4rem;
+.key-container.activated {
+	border-color: orange;
+	box-shadow: 3px 3px 10px rgba(127, 82, 0);
+	transform: scale(1.1);
 }
 
-.sound {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  color: #ffc600;
+.key-container kbd {
+	user-select: none;
+	font-size: 2rem;
+	color: darkorange;
+	opacity: 0.75;
+}
+
+.key-sound-name {
+	user-select: none;
+	color: white;
+	opacity: 0.75;
+}
+
+.background-attribution-footer {
+	font-size: 10px;
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+}
+
+a:link {
+	color: gray;
+}
+
+a:visited {
+	color: dimgray;
+}
+
+a:focus {
+	color: white;
+}
+
+a:hover {
+	color: white;
+}
+
+a:active {
+	color: white;
 }
